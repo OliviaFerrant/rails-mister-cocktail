@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= simple_form_for [@cocktail, @dose] do |c| %>
+        <%= c.input :name %>
+        <%= c.input :ingredient, collection:INGREDIENTS %>
+        <%= c.full_error :token %>
+        <%= c.submit 'Update', class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
+</div>

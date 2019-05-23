@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <h1>List of cocktails:</h1>
+      <%= link_to  new_cocktail_path do %> <i class="fas fa-cocktail"></i> Create a new Cocktail <% end %>
+      <% @cocktails.each do |cocktail| %>
+        <p><%= link_to cocktail.name, cocktail_path(cocktail) %> | <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure ?"} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
