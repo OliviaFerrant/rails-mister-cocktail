@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-12">
       <%= simple_form_for [@cocktail, @dose] do |c| %>
-        <%= c.input :name %>
-        <%= c.association :ingredient, collection: Doses.ingredient_id %>
+        <%= c.input :description %>
+        <%= c.association :ingredient, collection: Ingredient.all %>
         <%= c.full_error :token %>
         <%= c.submit 'Save' %>
       <% end %>

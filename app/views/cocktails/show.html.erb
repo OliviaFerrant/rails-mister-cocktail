@@ -2,8 +2,18 @@
   <div class="row">
     <div class="col-12">
       <h1><%= @cocktail.name %></h1>
+      <p><% @cocktail.doses.each do |d| %></p>
+        <ul>
+          <li><%= d.description %> | <%= link_to "Delete", dose_path, method: :delete, data: { confirm: "Are you sure?" }  %></li>
+          <li> <%= d.ingredient.name %></li>
+        </ul>
+        <% end %>
       <%= link_to cocktails_path do%>
         <i class="fas fa-home"></i> <span>Home</span>
+      <% end %>
+
+      <%= link_to new_cocktail_dose_path(@cocktail) do%>
+        <i class="fas fa-plus"></i> <span>Add dose</span>
       <% end %>
 
       <%= link_to edit_cocktail_path do%>
