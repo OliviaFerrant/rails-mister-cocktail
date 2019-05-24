@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12">
+  <div class="row d-flex justify-content-center m-5">
+    <div class="col-12 col-sm-2">
       <%= simple_form_for [@cocktail, @dose] do |c| %>
         <%= c.input :name %>
         <%= c.input :ingredient, collection:INGREDIENTS %>

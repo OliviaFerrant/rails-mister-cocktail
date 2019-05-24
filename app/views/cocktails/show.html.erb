@@ -1,10 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
+<%= render "navbar" %>
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center m-5">
+    <div class="col-12 col-sm-2">
+
       <h1><%= @cocktail.name %></h1>
       <p><% @cocktail.doses.each do |d| %></p>
         <ul>
-          <li><%= d.description %> | <%= link_to "Delete", dose_path, method: :delete, data: { confirm: "Are you sure?" }  %></li>
+          <li><%= d.description %> | <%= link_to "Delete", dose_path(d), method: :delete, data: { confirm: "Are you sure?" } %></li>
           <li> <%= d.ingredient.name %></li>
         </ul>
         <% end %>
@@ -19,10 +21,6 @@
       <%= link_to edit_cocktail_path do%>
         <i class="fas fa-pencil-alt"></i> <span>Edit</span>
       <% end %>
-      <p><%= link_to cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure ?"} do %>
-          <i class="fas fa-trash-alt"></i>
-        <% end %>
-      </p>
     </div>
   </div>
 </div>

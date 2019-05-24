@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
+  before_action :set_ingredient, only: [:show, :edit, :destroy]
 
   def index
     @cocktails = Cocktail.all
