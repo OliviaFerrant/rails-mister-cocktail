@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12">
-      <%= simple_form_for [@cocktail, @dose] do |c| %>
+      <%= simple_form_for @cocktail do |c| %>
         <%= c.input :name %>
-        <%= c.association :ingredient, collection: Doses.ingredient_id %>
+
         <%= c.full_error :token %>
         <%= c.submit 'Save' %>
       <% end %>
