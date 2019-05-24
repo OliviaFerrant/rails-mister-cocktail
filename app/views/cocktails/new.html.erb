@@ -3,7 +3,6 @@
     <div class="col-12">
       <%= simple_form_for @cocktail do |c| %>
         <%= c.input :name %>
-
         <%= c.full_error :token %>
         <%= c.submit 'Save' %>
       <% end %>
