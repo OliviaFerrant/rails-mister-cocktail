@@ -1,13 +1,17 @@
 <%= render "layouts/banner" %>
-
-  <h1>List of cocktails:</h1>
-  <div class="card-container">
-
+  <div class="titles">
+    <h1>List of cocktails:</h1>
+  </div>
+  <div class="cards-container">
+<div class="d-flex bd-highlight mb-3">
   <% @cocktails.each do |cocktail| %>
-    <div class="cards">
-      <div class="card" style="background-image: url(<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>)">
-        <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+    <div class="card-box p-2 bd-highlight col">
+      <div class="cards">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>)">
+        </div>
+          <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
       </div>
     </div>
   <% end %>
+</div>
 </div>

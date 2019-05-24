@@ -1,4 +1,3 @@
-
 .navbar-lewagon {
   justify-content: space-between;
   background: linear-gradient(rgba(74,49,40,0.9), rgba(46,30,25,1));
@@ -13,4 +12,9 @@
 .navbar-lewagon .navbar-brand img {
   width: 90px;
   margin-bottom: 8px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0px;
 }
