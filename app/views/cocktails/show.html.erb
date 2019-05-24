@@ -3,10 +3,10 @@
     <div class="col-12 col-sm-2">
 
       <h1><%= @cocktail.name %></h1>
+        <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
       <p><% @cocktail.doses.each do |d| %></p>
         <ul>
-          <li><%= d.description %> | <%= link_to "Delete", dose_path(d), method: :delete, data: { confirm: "Are you sure?" } %></li>
-          <li> <%= d.ingredient.name %></li>
+          <li><%= d.description %>: <%= d.ingredient.name %> | <%= link_to "Delete", dose_path(d), method: :delete, data: { confirm: "Are you sure?" } %></li>
         </ul>
         <% end %>
       <%= link_to cocktails_path do%>

@@ -3,6 +3,8 @@
     <div class="col-12">
       <%= simple_form_for @cocktail do |c| %>
         <%= c.input :name %>
+        <%= c.input :photo %>
+        <%= c.input :photo_cache, as: :hidden %>
         <%= c.full_error :token %>
         <%= c.submit 'Save' %>
       <% end %>
