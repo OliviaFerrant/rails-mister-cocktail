@@ -1,31 +1,13 @@
-<div class="container">
-  <div class="row d-flex justify-content-center m-5">
-    <div class="col-12">
-      <%= link_to new_cocktail_path do %> <i class="fas fa-cocktail"></i> Create a new Cocktail <% end %>
+<%= render "layouts/banner" %>
 
-      <h1>List of cocktails:</h1>
+  <h1>List of cocktails:</h1>
+  <div class="container">
 
-      <% @cocktails.each do |cocktail| %>
-      <div class="col-6">
-        <li class="m-2">
-          <div class="card-trip">
-            <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-              <p>
-                <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure ?"} do %>
-                  <i class="fas fa-trash-alt"></i>
-                <% end %>
-              </p>
-            </div>
-              <h2 class="card-trip-pricing">£99.99</h2>
-              <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-              <% end %>
-            </div>
-          </div>
-        </li>
+  <% @cocktails.each do |cocktail| %>
+    <div class="cards">
+      <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
+        <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>

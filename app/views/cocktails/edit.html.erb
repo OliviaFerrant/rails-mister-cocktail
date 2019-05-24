@@ -11,3 +11,23 @@
     </div>
   </div>
 </div>
+<div class="">
+        <div class="cards">
+          <div class="card">
+            <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
+          <div class="card-trip-infos">
+            <div>
+
+              <p>
+                <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure ?"} do %>
+                  <i class="fas fa-trash-alt"></i>
+                <% end %>
+              </p>
+            </div>
+              <h2 class="card-trip-pricing">£99.99</h2>
+              <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
